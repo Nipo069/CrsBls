@@ -1,8 +1,107 @@
 
 
+var email = localStorage.getItem('email');
+var mdp = localStorage.getItem('mdp');
+var Appointment_Category =localStorage.getItem('ac'); // Normal / Premium / Prime Time
+var Visa_Type = localStorage.getItem('vt'); // Schengen Visa or National Visa
+var Visa_Sub_Type =localStorage.getItem('vst');; // n = national /  e = etudiant / r = regrepment
+var city = localStorage.getItem('cty'); // Casablanca / Tetouan/ Nador / Rabat / Tangier / Agadir
+
+
 (function () {
     'use strict';
     if (window.location.href.match("https://www.blsspainmorocco.net/") && window.location.href.match("/.*ccount/.*og.*n")) {
+
+
+
+
+        // Load the Bulma CSS framework
+        const linkElement = document.createElement('link');
+        linkElement.rel = 'stylesheet';
+        linkElement.href = 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css';
+        document.head.appendChild(linkElement);
+
+        // Create a form with a username and password input
+        const formElement = document.createElement('form');
+        formElement.classList.add('box');
+        formElement.innerHTML = `
+    <div class="container is-max-widescreen  has-text-centered">
+        <div class="notification is-primary ">
+            <div class="columns ">
+                <div class="column">
+                    <input class="input is-normal" type="text" placeholder="Email">
+                    <input class="input is-normal" type="text" placeholder="mdp">
+                    <input class="input is-normal" type="text" placeholder="ibb">
+                </div>
+                <div class="column">
+                    <div class="select" id="ac">
+                        <select>
+                            <option value="Normal">Normal</option>
+                            <option value="Premium">Premium</option>
+                            <option value="Prime Time">Prime Time</option>
+                        </select>
+                    </div>
+                    <div class="select" id="VT">
+                        <select>
+                            <option value="Schengen Visa">Schengen Visa</option>
+                            <option value="National Visa">National Visa</option>
+                        </select>
+                    </div>
+                    <div class="select" id="Vst">
+                        <select>
+                            <option value="Student Visa">Student Visa</option>
+                            <option value="National Visa">National Visa</option>
+                            <option value="Family Reunification Visa">Family Reunification Visa</option>
+                        </select>
+                    </div>
+                    <div class="select" id="cty">
+                        <select>
+                            <option value="Casablanca">Casablanca</option>
+                            <option value="Tetouan">Tetouan</option>
+                            <option value="Nador">Nador</option>
+                            <option value="Rabat">Rabat</option>
+                            <option value="Tangier">Tangier</option>
+                            <option value="Agadir">Agadir</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="column is-align-self-center">
+                    <button class="button is-warning ">save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+`;
+
+        // Insert the form after the main element
+        const mainElement = document.querySelector('main');
+        mainElement.insertAdjacentElement('afterend', formElement);
+
+
+        const saveButton = document.querySelector('.button');
+        saveButton.addEventListener('click', function() {
+            // Get the input and select element values
+            const email = document.querySelector('input[placeholder="Email"]').value;
+            const mdp = document.querySelector('input[placeholder="mdp"]').value;
+            const ibb = document.querySelector('input[placeholder="ibb"]').value;
+            const ac = document.querySelector('#ac select').value;
+            const vt = document.querySelector('#VT select').value;
+            const vst = document.querySelector('#Vst select').value;
+            const cty = document.querySelector('#cty select').value;
+
+            // Save the data in local storage
+            localStorage.setItem('email', email);
+            localStorage.setItem('mdp', mdp);
+            localStorage.setItem('ibb', ibb);
+            localStorage.setItem('ac', ac);
+            localStorage.setItem('vt', vt);
+            localStorage.setItem('vst', vst);
+            localStorage.setItem('cty', cty);
+        });
+
+
+
         function LoginFun(email, mdp) {
             var requiredTextInput = document.querySelector("input[type=\"text\"][required]");
             var requiredPasswordInput = document.querySelector("input[type=\"password\"][required]");
@@ -36,6 +135,7 @@
                 clearInterval(elementExist);
             }
         }, 100);
+
     }
 
     if (window.location.href.includes('MAR/bls/visatype?data') ) {
@@ -136,4 +236,16 @@
         }
         chooseAppointment(city,Appointment_Category,Visa_Type,Visa_Sub_Type);
     }
+
+    const emailInput = document.getElementById("email");
+    const mdpInput = document.getElementById("mdp");
+    const ibbInput = document.getElementById("ibb");
+    const saveButton = document.getElementById("save-button");
+
+    saveButton.addEventListener("click", function() {
+        localStorage.setItem("email", emailInput.value);
+        localStorage.setItem("mdp", mdpInput.value);
+        localStorage.setItem("ibb", ibbInput.value);
+    });
 })();
+
