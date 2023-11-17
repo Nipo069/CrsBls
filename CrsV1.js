@@ -1,5 +1,8 @@
 
 
+var email = "";
+var mdp = "";
+
 var email = localStorage.getItem('email');
 var mdp = localStorage.getItem('mdp');
 var Appointment_Category =localStorage.getItem('ac'); // Normal / Premium / Prime Time
