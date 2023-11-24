@@ -179,28 +179,28 @@ var city = localStorage.getItem('cty'); // Casablanca / Tetouan/ Nador / Rabat /
             }
             await timer(500);
             var Natcat = Visa_Sub_Type;
-            if (fromLS === "Schengen Visa") {
+            if (fromLS == "Schengen Visa") {
                 var VisaSubTypeId = VisaSubType;
                 var VisaSubTypeList = document.querySelector(`ul#${VisaSubType}`);
                 var FirstOption = VisaSubTypeList.querySelector('li[data-offset-index="0"]');
                 FirstOption.click();
             }
-            if (fromLS === "National Visa") {
-                if (Natcat === "Student Visa") {
+            if (fromLS == "National Visa") {
+                if (Natcat == "Student Visa") {
                     var VisaSubTypeId = VisaSubType;
                     var VisaSubTypeList = document.querySelector(`ul#${VisaSubType}`);
                     var FirstOption = VisaSubTypeList.querySelector('li[data-offset-index="0"]');
                     FirstOption.click();
 
                 }
-                if (Natcat === "Family Reunification Visa") {
+                if (Natcat == "Family Reunification Visa") {
                     var VisaSubTypeId = VisaSubType;
                     var VisaSubTypeList = document.querySelector(`ul#${VisaSubType}`);
                     var FirstOption = VisaSubTypeList.querySelector('li[data-offset-index="1"]');
                     FirstOption.click();
 
                 }
-                if (Natcat === "National Visa") {
+                if (Natcat == "National Visa") {
                     var VisaSubTypeId = VisaSubType;
                     var VisaSubTypeList = document.querySelector(`ul#${VisaSubType}`);
                     var FirstOption = VisaSubTypeList.querySelector('li[data-offset-index="2"]');
