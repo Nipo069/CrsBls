@@ -186,21 +186,21 @@ var city = localStorage.getItem('cty'); // Casablanca / Tetouan/ Nador / Rabat /
                 FirstOption.click();
             }
             if (fromLS === "National Visa") {
-                if (Natcat === "e") {
+                if (Natcat === "Student Visa") {
                     var VisaSubTypeId = VisaSubType;
                     var VisaSubTypeList = document.querySelector(`ul#${VisaSubType}`);
                     var FirstOption = VisaSubTypeList.querySelector('li[data-offset-index="0"]');
                     FirstOption.click();
 
                 }
-                if (Natcat === "r") {
+                if (Natcat === "Family Reunification Visa") {
                     var VisaSubTypeId = VisaSubType;
                     var VisaSubTypeList = document.querySelector(`ul#${VisaSubType}`);
                     var FirstOption = VisaSubTypeList.querySelector('li[data-offset-index="1"]');
                     FirstOption.click();
 
                 }
-                if (Natcat === "n") {
+                if (Natcat === "National Visa") {
                     var VisaSubTypeId = VisaSubType;
                     var VisaSubTypeList = document.querySelector(`ul#${VisaSubType}`);
                     var FirstOption = VisaSubTypeList.querySelector('li[data-offset-index="2"]');
