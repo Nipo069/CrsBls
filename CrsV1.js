@@ -7,7 +7,7 @@ var email = localStorage.getItem('email');
 var mdp = localStorage.getItem('mdp');
 var Appointment_Category =localStorage.getItem('ac'); // Normal / Premium / Prime Time
 var Visa_Type = localStorage.getItem('vt'); // Schengen Visa or National Visa
-var Visa_Sub_Type =localStorage.getItem('vst');; // n = national /  e = etudiant / r = regrepment
+var Visa_Sub_Type =localStorage.getItem('vst'); // n = national /  e = etudiant / r = regrepment
 var city = localStorage.getItem('cty'); // Casablanca / Tetouan/ Nador / Rabat / Tangier / Agadir
 
 
